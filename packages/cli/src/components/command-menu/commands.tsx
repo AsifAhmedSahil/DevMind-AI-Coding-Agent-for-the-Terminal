@@ -7,6 +7,24 @@ export const COMMANDS:Command[] = [
         value:"/new"
     },
     {
+    name: "agents",
+    description: "Switch agents",
+    value: "/agents",
+   
+  },
+  {
+    name: "models",
+    description: "Select AI model for generation",
+    value: "/models",
+    
+  },
+  {
+    name: "sessions",
+    description: "Browse past sessions",
+    value: "/sessions",
+    
+  },
+    {
         name:"exit",
         description:"Quit the application",
         value:"/exit",
