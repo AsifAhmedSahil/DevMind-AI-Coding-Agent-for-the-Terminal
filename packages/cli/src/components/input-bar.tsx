@@ -14,10 +14,10 @@ export const TEXTAREA_KEY_BINDINGS: KeyBinding[] = [
   { name: "enter", shift: true, action: "newline" },
 ];
 
-export function InputBar({onSubmit,disabled=true}:Props){
-     return (
+export function InputBar({ onSubmit, disabled = true }: Props) {
+  return (
     <box width="100%" alignItems="center">
-        <box
+      <box
         border={["left"]}
         borderColor="cyan"
         customBorderChars={{
@@ -36,14 +36,14 @@ export function InputBar({onSubmit,disabled=true}:Props){
           width="100%"
           gap={1}
         >
-            <textarea focused={!disabled}  placeholder={`Ask anything... "Fix a bug in the database"`} keyBindings={TEXTAREA_KEY_BINDINGS}/>
-<StatusBar/>
-
-            
-
+          <textarea
+            focused={!disabled}
+            placeholder={`Ask anything... "Fix a bug in the database"`}
+            keyBindings={TEXTAREA_KEY_BINDINGS}
+          />
+          <StatusBar />
         </box>
       </box>
-
     </box>
-     )
+  );
 }
