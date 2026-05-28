@@ -88,7 +88,7 @@ export function InputBar({ onSubmit, disabled = true }: Props) {
     [resolveCommand,handleCommand]
   );
 
-  // wire up textarea submit handler once so it always reads the latest state. update
+  // wire up textarea submit handler once so it always reads the latest state. 
   useEffect(()=>{
     const textarea = textareaRef.current;
     if(!textarea) return;
