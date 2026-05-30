@@ -1,36 +1,85 @@
-import type { Command } from "./types"
+import type { Command } from "./types";
 
-export const COMMANDS:Command[] = [
-    {
-        name:"new",
-        description:"Start a new conversation",
-        value:"/new"
+export const COMMANDS: Command[] = [
+  {
+    name: "new",
+    description: "Start a new conversation",
+    value: "/new",
+    action: (ctx) => {
+      ctx.toast.show({ message: "starting new conversation..." });
     },
-    {
+  },
+  {
     name: "agents",
     description: "Switch agents",
     value: "/agents",
-   
+    action: (ctx) => {
+      ctx.toast.show({ message: "Switching agents..." });
+    },
   },
   {
     name: "models",
     description: "Select AI model for generation",
     value: "/models",
-    
+    action: (ctx) => {
+      ctx.toast.show({ message: "selecting models..." });
+    },
   },
   {
     name: "sessions",
     description: "Browse past sessions",
     value: "/sessions",
-    
-  },
-    {
-        name:"exit",
-        description:"Quit the application",
-        value:"/exit",
-        action:(ctx)=>{
-            ctx.exit()
-        }
+    action: (ctx) => {
+      ctx.toast.show({ message: "Loading sessions..." });
     },
+  },
+  {
+    name: "theme",
+    description: "Change color theme",
+    value: "/theme",
+    action: (ctx) => {
+      ctx.toast.show({ message: "Opening theme picker..." });
+    },
+  },
+  {
+    name: "login",
+    description: "Sign in with your browser",
+    value: "/login",
+    action: (ctx) => {
+      ctx.toast.show({ message: "Opening browser to sign in..." });
+    },
+  },
+  {
+    name: "logout",
+    description: "Sign out of your browser",
+    value: "/logout",
+    action: (ctx) => {
+      ctx.toast.show({ message: "Signed out", variant: "success" });
+    },
+  },
+  {
+    name: "upgrade",
+    description: "Buy mode credits",
+    value: "/upgrade",
+    action: (ctx) => {
+      ctx.toast.show({ message: "Opening credits checkout" });
+    },
+  },
+  {
+    name: "usage",
+    description: "Open billing portal in your browser",
+    value: "/usage",
+    action: (ctx) => {
+      ctx.toast.show({ message: "Opening billing portal..." });
+    },
+  },
 
-]
+  {
+    name: "exit",
+    description: "Quit the application",
+    value: "/exit",
+    action: (ctx) => {
+      ctx.exit();
+    },
+  },
+];
