@@ -8,18 +8,34 @@
     "packages/cli": {
       "name": "@devmind/cli",
       "dependencies": {
+        "@devmind/shared": "workspace:*",
         "@opentui/core": "^0.2.15",
         "@opentui/react": "^0.2.15",
+        "hono": "^4.12.23",
         "opentui-spinner": "^0.0.6",
         "react": "^19.2.6",
         "react-router": "^7.16.0",
+        "zod": "^4.4.3",
       },
       "devDependencies": {
+        "@devmind/server": "workspace:*",
         "@types/bun": "latest",
         "@types/react": "^19.2.15",
       },
       "peerDependencies": {
         "typescript": "^5",
+      },
+    },
+    "packages/server": {
+      "name": "@devmind/server",
+      "dependencies": {
+        "@devmind/shared": "workspace:*",
+        "@hono/zod-validator": "^0.8.0",
+        "hono": "^4.12.23",
+        "zod": "^4.4.3",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.3.14",
       },
     },
     "packages/shared": {
@@ -42,7 +58,11 @@
 
     "@devmind/cli": ["@devmind/cli@workspace:packages/cli"],
 
+    "@devmind/server": ["@devmind/server@workspace:packages/server"],
+
     "@devmind/shared": ["@devmind/shared@workspace:packages/shared"],
+
+    "@hono/zod-validator": ["@hono/zod-validator@0.8.0", "", { "peerDependencies": { "hono": ">=4.10.0", "zod": "^3.25.0 || ^4.0.0" } }, "sha512-5uS4S1/LKtZQYvD4BtpPUFkOv8d1wNxHHrChm26buMiEYc1FrHWvDUaKVBwkiVtvSExHSpLGDvcnpI2Copyj9w=="],
 
     "@opentelemetry/api": ["@opentelemetry/api@1.9.1", "", {}, "sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q=="],
 
@@ -93,6 +113,8 @@
     "eventsource-parser": ["eventsource-parser@3.1.0", "", {}, "sha512-kJezFj9YFAMLeORyi7aCLxLbD5/qWMQnoMVlVPyHIll7lgRJCc3JVln9Vgl9nwQi0YkMnhdGTMNn7CkRRAptMg=="],
 
     "get-east-asian-width": ["get-east-asian-width@1.6.0", "", {}, "sha512-QRbvDIbx6YklUe6RxeTeleMR0yv3cYH6PsPZHcnVn7xv7zO1BHN8r0XETu8n6Ye3Q+ahtSarc3WgtNWmehIBfA=="],
+
+    "hono": ["hono@4.12.23", "", {}, "sha512-eIaZ9qDgu7XV0pxOCrg7/WhnQ6Ivm22UcxhXx/A3dcbqbbYgBEkc6e/J/s7j2tS96zoB0S9VBdLwQNCWwUo4LA=="],
 
     "json-schema": ["json-schema@0.4.0", "", {}, "sha512-es94M3nTIfsEPisRafak+HDLfHXnKBhV3vU5eqPcS3flIWqcxJWgXHXiey3YrpaNsanY5ei1VoYEbOzijuq9BA=="],
 
